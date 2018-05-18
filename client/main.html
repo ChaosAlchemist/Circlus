@@ -5,11 +5,14 @@
 <body>
   <div class = "container">
     <h3>Grupo: Ejemplo</h3>
-
-    {{> verTemas}}
+    <ul class = "collection">
+      {{#each temas}}
+      {{> verTemas}}
+      {{/each}}
+    </ul>
   </div>
 </body>
 
 <template name="verTemas">
-  <li class="collection-item">Ejemplo Tema</li>
+  <li class="collection-item">{{text}}</li>
 </template>
