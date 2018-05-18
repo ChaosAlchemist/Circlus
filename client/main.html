@@ -8,6 +8,9 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Circlus</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="nav-item">
+            <a class="waves-effect waves-light btn modal-trigger" href="#crearTema">Crear Tema</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -20,8 +23,28 @@
       {{/each}}
     </ul>
   </div>
+
+  {{ > crear }}
+
+  <script>
+  $(document).ready(function() {
+      $('.modal').modal();
+  });
+  </script>
+
 </body>
 
 <template name="verTemas">
   <li class="collection-item">{{text}}</li>
+</template>
+
+<template name="crear">
+  <div id="crearTema" class="modal">
+    <div class="modal-content">
+      <h3>Crear Nuevo Tema</h3>
+      <form class="add-form">
+        <input type="text" name="text" placeholder="Título del Tema">
+      </form>
+    </div>
+  </div>
 </template>
